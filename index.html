@@ -160,6 +160,60 @@
   </div>
 </section>
 
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+  import { getFirestore, doc, getDoc, updateDoc, setDoc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_PROJECT.firebaseapp.com",
+    projectId: "YOUR_PROJECT",
+    storageBucket: "YOUR_PROJECT.appspot.com",
+    messagingSenderId: "YOUR_SENDER_ID",
+    appId: "YOUR_APP_ID"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+</script>
+<script type="module">
+  import { doc, getDoc, setDoc, updateDoc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+
+  async function incrementVisitorCount() {
+    const ref = doc(db, "stats", "visitorCount");
+    const snapshot = await getDoc(ref);
+
+    if (!snapshot.exists()) {
+      await setDoc(ref, { count: 1 });
+      return 1;
+    } else {
+      const current = snapshot.data().count;
+      await updateDoc(ref, { count: current + 1 });
+      return current + 1;
+    }
+  }
+
+  incrementVisitorCount().then(count => {
+    animateCounter(count);
+  });
+</script>
+<section class="visitor-counter">
+  <p>Total Visitors:</p>
+  <span id="visitorCount">0</span>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.0.7/countUp.min.js"></script>
+<script>
+  function animateCounter(count) {
+    const counter = new CountUp('visitorCount', count, {
+      duration: 2,
+      separator: ','
+    });
+    if (!counter.error) counter.start();
+  }
+</script>
+
+
 <!-- Footer -->
 <footer>
   <p>&copy; 2026 Suraj Chandra Joshi | Physics • Research • Development</p>

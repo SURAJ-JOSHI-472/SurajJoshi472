@@ -263,16 +263,7 @@ footer {
   margin-top: 12px;
 }
 
-.youtube-link a {
-  text-decoration: none;
-  font-weight: bold;
-  color: #cc0000; /* YouTube red */
-  transition: color 0.3s ease;
-}
 
-.youtube-link a:hover {
-  color: #ff4444;
-}
 
 /* Mobile adjustments */
 @media (max-width: 600px) {
@@ -283,5 +274,6 @@ footer {
     font-size: 0.9rem;
   }
 }
+
 
 

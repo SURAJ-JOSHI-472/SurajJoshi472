@@ -258,11 +258,6 @@ footer {
   height: 100%;
 }
 
-/* YouTube link styling */
-.youtube-link {
-  margin-top: 12px;
-}
-
 
 
 /* Mobile adjustments */
@@ -274,6 +269,7 @@ footer {
     font-size: 0.9rem;
   }
 }
+
 
 
 

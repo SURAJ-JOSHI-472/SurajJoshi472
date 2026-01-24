@@ -232,13 +232,56 @@ footer {
   margin-bottom: 10px;
 }
 
+/* General section styling */
+#youtube {
+  text-align: center;   /* centers heading and link */
+  padding: 20px;
+  max-width: 900px;     /* optional: keeps content neat on large screens */
+  margin: 0 auto;
+}
+
+/* Responsive video container */
 .video-container {
   position: relative;
   padding-bottom: 56.25%; /* 16:9 aspect ratio */
   height: 0;
   overflow: hidden;
-  max-width: 100%; /* ensures it fits smaller screens */
-  margin: 0 auto;   /* centers the video horizontally */
+  max-width: 100%;
+  margin: 0 auto; /* centers horizontally */
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* YouTube link styling */
+.youtube-link {
+  margin-top: 12px;
+}
+
+.youtube-link a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #cc0000; /* YouTube red */
+  transition: color 0.3s ease;
+}
+
+.youtube-link a:hover {
+  color: #ff4444;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  #youtube h2 {
+    font-size: 1.2rem;
+  }
+  .youtube-link a {
+    font-size: 0.9rem;
+  }
 }
 
 

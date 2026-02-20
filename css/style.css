@@ -272,31 +272,29 @@ footer {
 #youtube {
   padding: 60px 20px;
   background-color: #f9f9f9;
-  text-align: center;
 }
 
 #youtube h2 {
   font-size: 2em;
   margin-bottom: 15px;
+  text-align: left;   /* Align heading to the left */
 }
 
 #youtube p {
   max-width: 700px;
-  margin: 0 auto 40px;
+  margin: 0 0 40px 0; /* Left aligned paragraph */
   font-size: 1.1em;
   color: #555;
+  text-align: left;
 }
 
 .lecture-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Two columns on desktop, stack on mobile */
   gap: 30px;
 }
 
 .lecture-card {
-  flex: 1 1 500px;
-  max-width: 560px;
   background: #fff;
   padding: 15px;
   border-radius: 8px;
@@ -313,4 +311,5 @@ footer {
   margin-top: 12px;
   font-size: 1.2em;
   color: #333;
+  text-align: left;   /* Align titles to the left */
 }

@@ -269,18 +269,18 @@ footer {
 }
 
 /* YouTube Lectures Section */
-#youtube {
+#youtubelectures {
   padding: 60px 20px;
   background-color: #f9f9f9;
 }
 
-#youtube h2 {
+#youtubelectures h2 {
   font-size: 2em;
   margin-bottom: 15px;
   text-align: left;   /* Align heading to the left */
 }
 
-#youtube p {
+#youtubelectures p {
   max-width: 700px;
   margin: 0 0 40px 0; /* Left aligned paragraph */
   font-size: 1.1em;
@@ -313,3 +313,4 @@ footer {
   color: #333;
   text-align: left;   /* Align titles to the left */
 }
+

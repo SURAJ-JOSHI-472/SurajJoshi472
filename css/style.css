@@ -290,8 +290,14 @@ footer {
 
 .lecture-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Two columns on desktop, stack on mobile */
+  grid-template-columns: 1fr 1fr;   /* Always two equal columns on larger screens */
   gap: 30px;
+}
+
+@media (max-width: 768px) {
+  .lecture-container {
+    grid-template-columns: 1fr;     /* Stack on mobile */
+  }
 }
 
 .lecture-card {
@@ -303,7 +309,7 @@ footer {
 
 .lecture-card iframe {
   width: 100%;
-  height: 315px;
+  height: 315px;   /* Fixed height for consistency */
   border-radius: 6px;
 }
 
@@ -311,6 +317,5 @@ footer {
   margin-top: 12px;
   font-size: 1.2em;
   color: #333;
-  text-align: left;   /* Align titles to the left */
+  text-align: left;   /* Left aligned titles */
 }
-
